@@ -1,0 +1,10 @@
+import type { GifData } from "../interfaces";
+
+export const GridItem = ({ title, url }: GifData) => {
+  return (
+    <div className="card">
+      <img src={url} alt={title} />
+      <p>{title}</p>
+    </div>
+  );
+};
