@@ -10,15 +10,18 @@ interface GifGridProps {
 export const GifGrid = ({ title }: GifGridProps): JSX.Element => {
   const { isLoading, gifs } = useFetchApi(title);
 
-  if (isLoading) <></>;
-  console.log(isLoading);
   return (
     <>
-      <div className="card-grid">
-        {gifs.map((gif) => {
-          return <GridItem key={gif.id} {...gif} />;
-        })}
-      </div>
+      {isLoading ? (
+        <h3>Loading</h3>
+      ) : (
+        <div className="card-grid">
+          {gifs.map((data, i) => {
+            console.log(`THIS IS THE DATA: ${data.url}`);
+            return <GridItem key={data.id} {...data} />;
+          })}
+        </div>
+      )}
     </>
   );
 };

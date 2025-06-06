@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
-import type { GifData } from '../interfaces'
 import { getGifs } from '../helpers/GetGifs'
+import type { Datum } from '../interfaces';
 
 interface UseFetchApiReturnProps{
-    gifs: GifData[];
+    gifs: Datum[];
     isLoading: boolean;
 }
 
 
 
 export const useFetchApi = (title: string ):UseFetchApiReturnProps => {
-     const [gifs, setGifs] = useState<GifData[]>([]);
+     const [gifs, setGifs] = useState<Datum[]>([]);
      const [isLoading, setIsLoading] = useState<boolean>(true)
     
     

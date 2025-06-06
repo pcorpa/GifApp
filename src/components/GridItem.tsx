@@ -1,9 +1,9 @@
-import type { GifData } from "../interfaces";
+import type { Datum } from "../interfaces";
 
-export const GridItem = ({ title, url }: GifData) => {
+export const GridItem = ({ title, images }: Datum) => {
   return (
     <div className="card">
-      <img src={url} alt={title} />
+      <img src={images.downsized.url} alt={title} />
       <p>{title}</p>
     </div>
   );
