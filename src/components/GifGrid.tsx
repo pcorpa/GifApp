@@ -16,7 +16,7 @@ export const GifGrid = ({ title }: GifGridProps): JSX.Element => {
         <h3>Loading</h3>
       ) : (
         <div className="card-grid">
-          {gifs.map((data, i) => {
+          {gifs.map((data) => {
             console.log(`THIS IS THE DATA: ${data.url}`);
             return <GridItem key={data.id} {...data} />;
           })}
